@@ -1,5 +1,6 @@
 from telegram.ext import Updater, CommandHandler, CallbackContext
 from telegram import Update
+import os
 
 
 def start(update: Update, context: CallbackContext):
@@ -7,13 +8,13 @@ def start(update: Update, context: CallbackContext):
 
 
 if __name__ == '__main__':
-    TOKEN = '5489762226:AAEeF5a-WVcERI5DQGMV-OB9RsHfI3z8QYg'
+    TOKEN = os.environ['TOKEN']
     updater = Updater(token=TOKEN)
     updater.start_webhook(
         listen="0.0.0.0",
         port=8080,
         url_path=TOKEN,
-        webhook_url="https://sample-bot-python.onrender.com/" + TOKEN
+        webhook_url="https://bot1-prod-sample-bot-python-telegram-sx7buz.mo6.mogenius.io/" + TOKEN
     )
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.idle()
