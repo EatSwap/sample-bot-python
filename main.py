@@ -14,7 +14,7 @@ if __name__ == '__main__':
         listen="0.0.0.0",
         port=8080,
         url_path=TOKEN,
-        webhook_url="https://bot1-prod-sample-bot-python-telegram-sx7buz.mo6.mogenius.io/" + TOKEN
+        webhook_url="https://telegram-sample-bot-xyp6.onrender.com/" + TOKEN
     )
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.idle()
